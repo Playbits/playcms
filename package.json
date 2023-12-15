@@ -1,0 +1,8 @@
+{
+  "name": "playcms",
+  "version": "1.0.0",
+  "description": "a web development tool ",
+  "main": "index.js",
+  "author": "Abiola Adele <bilad89@yahoo.com>",
+  "license": "MIT"
+}
