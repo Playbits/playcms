@@ -1,0 +1,12 @@
+[submodule "backend"]
+	path = backend
+	url = git@github.com:Playbits/playcms_be.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:Playbits/playcms_fe.git
+[submodule "playcms_client_app"]
+	path = playcms_client_app
+	url = git@github.com:Playbits/playcms_client_app.git
+[submodule "playbit_website"]
+	path = playbit_website
+	url = git@github.com:Playbits/playbit_website.git
