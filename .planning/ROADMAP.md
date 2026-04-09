@@ -31,24 +31,19 @@ Plans:
 **Plans**: 5 plans
 Plans:
 - [x] 02-01-PLAN.md — Modular Registry (TDD)
-- [ ] 02-02-PLAN.md — Core Models & Repository
-- [ ] 02-03-PLAN.md — Schema Validator (TDD)
-- [ ] 02-04-PLAN.md — Services & Versioning
+- [x] 02-02-PLAN.md — Core Models & Repository
+- [x] 02-03-PLAN.md — Schema Validator (TDD)
+- [x] 02-04-PLAN.md — Services & Versioning
 - [ ] 02-05-PLAN.md — API, Wiring & Verification
 
-### Phase 3: Blog Core & Lifecycle
-**Goal**: Enable blog post management and organization
-**Depends on**: Phase 2
-**Requirements**: BLOG-02, BLOG-03, BLOG-04, BLOG-05, BLOG-06, BLOG-08, BLOG-11
-**Success Criteria** (what must be TRUE):
-  1. Posts can be created, saved as draft, scheduled for future dates, or published
-  2. Posts are correctly assigned to categories and tags for organization
-  3. Parent/Child relationship between posts is persisted and retrievable for hierarchical navigation
-  4. Search returns relevant blog posts based on keywords using pg_trgm
-  5. Related posts are automatically suggested based on common tags or categories
-  6. Comments can be submitted by users and moderated by an admin
-  7. XML sitemap is generated automatically containing all published posts
-**Plans**: TBD
+**Plans**: 6 plans
+Plans:
+- [ ] 03-01-PLAN.md — Blog Model Foundation
+- [ ] 03-02-PLAN.md — Post Lifecycle & Scheduling
+- [ ] 03-03-PLAN.md — Hierarchy & Organization
+- [ ] 03-04-PLAN.md — Search & Recommendations
+- [ ] 03-05-PLAN.md — Commenting System
+- [ ] 03-06-PLAN.md — Public Utility (Sitemap)
 
 ### Phase 4: Admin Experience (Editor & UI)
 **Goal**: Provide a modern block-based editing experience and improved Admin UX
