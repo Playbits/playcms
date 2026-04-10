@@ -1,6 +1,6 @@
 {
   "model_profile": "balanced",
-  "commit_docs": true,
+  "commit_docs": false,
   "parallelization": true,
   "search_gitignored": false,
   "brave_search": false,
@@ -37,5 +37,6 @@
   "agent_skills": {},
   "resolve_model_ids": "omit",
   "mode": "yolo",
-  "granularity": "standard"
+  "granularity": "standard",
+  "sub_repos": ["backend", "frontend", "playcms_client_app", "playbit_website"]
 }
