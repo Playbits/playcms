@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-- **Backend**: Go 1.23, Gin, GORM (PostgreSQL/SQLite), Redis/Asynq
+- **Backend**: Go 1.25+, Gin, GORM (PostgreSQL), Redis/Asynq
 - **Admin Frontend**: Nuxt 4, Vue 3, PrimeVue, Pinia, TailwindCSS 4
 - **Client Frontend**: Next.js 16, React 19, PrimeReact, Redux Toolkit, TailwindCSS 4
 
@@ -45,6 +45,9 @@
 ```bash
 cd backend
 go run main.go              # Port 8800
+# OR for live reload:
+nohup air > server.log 2>&1 &
+# Health check: curl http://localhost:8800/health
 ```
 
 ### Admin Frontend
@@ -83,3 +86,20 @@ playcms_client_app/ → Client-facing app (Next.js + PrimeReact)
 - **Commit style**: Descriptive lowercase messages (e.g., "remove local seeders", "fix bug and optimization")
 - **PR workflow**: Squash merge from feature branches to dev/main
 - **Middleware chain**: CORS → DomainValidation → Authorized (in that order)
+
+## Current Development Status
+
+- **Phase 01**: Stability & Migration - COMPLETED
+- **Phase 02**: Core Schema Engine - COMPLETED  
+- **Phase 03**: Blog Core & Lifecycle - IN PROGRESS (3/6 plans executed)
+- **Phase 04**: Admin Experience (Editor & UI) - NOT STARTED
+- **Phase 05**: Public Delivery & SEO - NOT STARTED
+- **Phase 06**: Advanced CMS Evolution - NOT STARTED
+- **Phase 07**: Performance & UX Polish - NOT STARTED
+
+## Infrastructure Notes
+
+- Database: PostgreSQL running in shared infrastructure at `/home/playbit/Playbit/shared-infrastructure`
+- Redis: Running at `redis://localhost:6379`
+- Backend API: Available at `http://localhost:8800` with health endpoint `/health`
+- Backend uses air for live reload with logs in `server.log`
