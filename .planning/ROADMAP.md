@@ -23,9 +23,15 @@ See: [.planning/milestones/v3.0-ROADMAP.md](./milestones/v3.0-ROADMAP.md)
 ### 🚧 Phase 4: Admin Experience (Editor & UI)
 **Goal**: Provide a modern block-based editing experience and improved Admin UX
 **Depends on**: Phase 3
-**Requirements**: BLOG-01, EVOL-01
+**Requirements**: BLOG-01, EVOL-01, BLOG-03, BLOG-06
 **Success Criteria**: Block-based editor (Tiptap), structured JSON storage, improved navigation
-**Plans**: TBD
+**Plans**: 5/5 plans created
+
+- [x] 04-01-PLAN.md — Tiptap Editor Integration (Backend)
+- [x] 04-02-PLAN.md — Categories & Tags Backend
+- [x] 04-03-PLAN.md — Tiptap Editor Frontend
+- [x] 04-04-PLAN.md — Admin UI Modernization
+- [x] 04-05-PLAN.md — Related Posts Feature
 
 ### Phase 5: Public Delivery & SEO
 **Goal**: Deliver blog content with high performance and search visibility
@@ -49,7 +55,7 @@ See: [.planning/milestones/v3.0-ROADMAP.md](./milestones/v3.0-ROADMAP.md)
 | 1. Stability & Migration | v3.0 | 4/4 | Complete | 2026-04-09 |
 | 2. Core Schema Engine | v3.0 | 4/4 | Complete | 2026-04-10 |
 | 3. Blog Core & Lifecycle | v3.0 | 6/6 | Complete | 2026-04-11 |
-| 4. Admin Experience | v3.1 | - | Not started | - |
+| 4. Admin Experience | v3.1 | 5/5 | Complete | - |
 | 5. Public Delivery & SEO | v3.2 | - | Not started | - |
 | 6. Advanced CMS | v3.3 | - | Not started | - |
 | 7. Performance | v3.4 | - | Not started | - |
