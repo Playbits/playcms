@@ -2018,3 +2018,27 @@ asynq: pid=786390 2026/04/12 08:28:33.299250 INFO: Send signal TERM or INT to te
 {"time":"2026-04-12T22:19:16.060261739+01:00","level":"WARN","msg":"Request failed with client error","method":"GET","path":"/api/v3/posts/post-id-123/related","status":404,"latency":"11.415µs","ip":"::1","time":"2026-04-12T22:19:16+01:00","service":"playcms-v3","version":"3.0.0","level":"WARN"}
 2026/04/12 22:19:16 WARN request error method=GET path=/api/v3/posts/post-id-123/related query="" status=404 latency_ms=0 client_ip=::1 user_agent=curl/8.14.1 service=playcms-v3 version=3.0.0
 [GIN] 2026/04/12 - 22:19:16 | 404 | 305.922µs |             ::1 | GET      "/api/v3/posts/post-id-123/related"
+2026/04/13 00:53:20 html/template:base.html:183:16: no such template "style"
+2026/04/13 01:02:09  [*] Sending add_product email to test@example.com...
+2026/04/13 01:02:09 Mail error: <nil>
+2026/04/13 01:17:06 html/template:base.html:183:16: no such template "style"
+asynq: pid=786390 2026/04/13 03:14:02.820222 ERROR: Failed to forward scheduled tasks: INTERNAL_ERROR: INTERNAL_ERROR: redis eval error: EOF
+asynq: pid=786390 2026/04/13 03:14:02.838588 ERROR: Dequeue error: UNKNOWN: redis eval error: EOF
+asynq: pid=786390 2026/04/13 03:14:02.978717 ERROR: Failed to write server state data: UNKNOWN: redis command error: SADD failed: EOF
+asynq: pid=786390 2026/04/13 03:14:03.511790 INFO: Stopping processor
+{"time":"2026-04-13T04:14:03.511834446+01:00","level":"INFO","msg":"Shutting down...","time":"2026-04-13T04:14:03+01:00","service":"playcms-v3","version":"3.0.0","level":"INFO"}
+asynq: pid=786390 2026/04/13 03:14:03.511919 INFO: Starting graceful shutdown
+redis: 2026/04/13 04:14:03 pool.go:617: redis: connection pool: failed to dial after 5 attempts: dial tcp 127.0.0.1:6379: connect: connection refused
+redis: 2026/04/13 04:14:04 pool.go:617: redis: connection pool: failed to dial after 5 attempts: dial tcp 127.0.0.1:6379: connect: connection refused
+asynq: pid=786390 2026/04/13 03:14:04.183221 INFO: Processor stopped
+2026/04/13 04:14:04 Worker stopped
+asynq: pid=786390 2026/04/13 03:14:04.183243 INFO: Waiting for all workers to finish...
+asynq: pid=786390 2026/04/13 03:14:04.183249 INFO: All workers have finished
+redis: 2026/04/13 04:14:04 pool.go:617: redis: connection pool: failed to dial after 5 attempts: dial tcp 127.0.0.1:6379: connect: connection refused
+make: *** [Makefile:13: run] Terminated
+redis: 2026/04/13 04:14:05 pool.go:617: redis: connection pool: failed to dial after 5 attempts: dial tcp 127.0.0.1:6379: connect: connection refused
+redis: 2026/04/13 04:14:05 pool.go:617: redis: connection pool: failed to dial after 5 attempts: dial tcp 127.0.0.1:6379: connect: connection refused
+redis: 2026/04/13 04:14:06 pool.go:617: redis: connection pool: failed to dial after 5 attempts: dial tcp 127.0.0.1:6379: connect: connection refused
+asynq: pid=786390 2026/04/13 03:14:06.323545 ERROR: Failed to clear server state: INTERNAL_ERROR: redis command error: ZREM failed: dial tcp 127.0.0.1:6379: connect: connection refused
+asynq: pid=786390 2026/04/13 03:14:06.323563 INFO: Exiting
+{"time":"2026-04-13T04:14:06.323577155+01:00","level":"INFO","msg":"Shutdown complete","time":"2026-04-13T04:14:06+01:00","service":"playcms-v3","version":"3.0.0","level":"INFO"}
