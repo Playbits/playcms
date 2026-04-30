@@ -3,8 +3,8 @@
 ## Milestones
 
 - ✅ **v3.0 Blog Core & Lifecycle** — Phases 1-3 (shipped 2026-04-11)
-- 🚧 **v3.1 Admin Experience** — Phase 4 (in progress)
-- 📋 **v3.2 Public Delivery & SEO** — Phase 5 (planned)
+- ✅ **v3.1 Admin Experience** — Phase 4 + Security Fixes (shipped 2026-04-24)
+- 📋 **v3.2 Public Delivery & SEO** — Phase 5 (next)
 - 📋 **v3.3 Advanced CMS** — Phase 6 (planned)
 - 📋 **v3.4 Performance** — Phase 7 (planned)
 
@@ -20,7 +20,10 @@
 See: [.planning/milestones/v3.0-ROADMAP.md](./milestones/v3.0-ROADMAP.md)
 </details>
 
-### ✅ Phase 4: Admin Experience (Editor & UI) — completed 2026-04-12
+<details>
+<summary>✅ v3.1 Admin Experience — SHIPPED 2026-04-24</summary>
+
+### Phase 4: Admin Experience (Editor & UI) — completed 2026-04-12
 **Goal**: Provide a modern block-based editing experience and improved Admin UX
 **Depends on**: Phase 3
 **Requirements**: BLOG-01, EVOL-01, BLOG-03, BLOG-06
@@ -32,6 +35,29 @@ See: [.planning/milestones/v3.0-ROADMAP.md](./milestones/v3.0-ROADMAP.md)
 - [x] 04-03-PLAN.md — Tiptap Editor Frontend
 - [x] 04-04-PLAN.md — Admin UI Modernization
 - [x] 04-05-PLAN.md — Related Posts Feature
+
+### Security Hardening — completed 2026-04-24
+- [x] Auth bypass fix in GetSchemaPost, GetSchemaPostWithRelated, GetRelatedPosts
+- [x] isValidSlug() input validation
+- [x] hasPermission nil pointer dereference fix
+- [x] GetPublishedRelatedPosts for safe public access
+- [x] Rate limiting for public blog endpoints
+- [x] OrderServiceInterface for testability
+- [x] Nil guard for worker.GlobalWorker
+
+### Repo Cleanup — completed 2026-04-24
+- [x] Removed 76MB binary from git tracking
+- [x] Fixed .gitignore
+- [x] Removed stale test artifacts
+
+### Frontend Enhancements — completed 2026-04-18
+- [x] API key management UI
+- [x] Product form redesign (4-step flow)
+- [x] SEO meta fields and internal link suggestions
+- [x] Category management in web settings
+- [x] Frontend-backend integration fixes
+
+</details>
 
 ### Phase 5: Public Delivery & SEO
 **Goal**: Deliver blog content with high performance and search visibility
@@ -56,6 +82,7 @@ See: [.planning/milestones/v3.0-ROADMAP.md](./milestones/v3.0-ROADMAP.md)
 | 2. Core Schema Engine | v3.0 | 4/4 | Complete | 2026-04-10 |
 | 3. Blog Core & Lifecycle | v3.0 | 6/6 | Complete | 2026-04-11 |
 | 4. Admin Experience | v3.1 | 5/5 | Complete | 2026-04-12 |
+| Security Hardening | v3.1 | - | Complete | 2026-04-24 |
 | 5. Public Delivery & SEO | v3.2 | - | Not started | - |
 | 6. Advanced CMS | v3.3 | - | Not started | - |
 | 7. Performance | v3.4 | - | Not started | - |

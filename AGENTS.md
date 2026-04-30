@@ -172,6 +172,32 @@ PlayCMS v2 is a modular Content Management System designed for high performance 
 ## Error Handling
 - **Internal Exceptions:** Custom error types defined in `backend/internal/exceptions/`.
 - **Global Error Middleware:** `backend/internal/middleware/error_handler.go` catches panics and formats error responses consistently.
+## Authentication & Authorization Architecture
+### Middleware Chain (in `backend/routes/router.go`)
+- **`OptionalAuth()`** — Tries API key first, then JWT. If neither provided, continues without identity (no abort). Used for public read endpoints (blogs, products).
+- **`ApiKeyAuth() + RequireApiKey()`** — Validates `X-API-Key` header. Aborts 401 if missing/invalid. Used for categories, tags, blog-sitemap, blog-search.
+- **`Authorized()`** — Requires JWT Bearer token. Aborts 401 if missing/invalid. Used for all write operations.
+- **`Authorized() + AdminOnly()`** — JWT required + `user.IsAdmin()` check. Used for project/product create/update/delete, post status/parent changes, API key creation.
+### Route Auth Mapping
+| Endpoint Group | Auth Middleware | Notes |
+|---|---|---|
+| GET /blogs, /blogs/:id, /post/schema/:slug | `OptionalAuth()` | Public reads, project_id from context if authed |
+| GET /products, /products/:id, /products/project/:projectId | `OptionalAuth()` | Public reads |
+| GET /categories, /categories/:id | `ApiKeyAuth() + RequireApiKey()` | API key required |
+| GET /tags, /tags/:id | `ApiKeyAuth() + RequireApiKey()` | API key required |
+| /blog-sitemap.xml, /blog-search | `ApiKeyAuth() + RequireApiKey()` | API key required (also registered inside BlogRoutes with RateLimiter — API-level routes win) |
+| POST/PATCH/DELETE blogs, posts, comments, products, orders | `Authorized()` | JWT required |
+| POST/PATCH/DELETE projects, products (admin ops) | `Authorized() + AdminOnly()` | Admin only |
+### Known Route Conflict
+- `/blog-sitemap.xml` and `/blog-search` are registered BOTH at API level (lines 159-160, `ApiKeyAuth()+RequireApiKey()`) AND inside BlogRoutes (lines 374-380, `RateLimiter()`). The API-level routes take precedence by routing priority.
+## Security Fixes Applied (commit a94b917)
+- Fixed auth bypass in `GetSchemaPost`, `GetSchemaPostWithRelated`, `GetRelatedPosts` — these endpoints now enforce proper auth
+- Added `isValidSlug()` input validation to prevent injection
+- Fixed `hasPermission` nil pointer dereference
+- Added `GetPublishedRelatedPosts` to blog service interface
+- Added rate limiting for public blog endpoints
+- Order handler: introduced `OrderServiceInterface` for testability
+- Order service: added nil guard for `worker.GlobalWorker` before Enqueue
 ## Cross-Cutting Concerns
 <!-- GSD:architecture-end -->
 

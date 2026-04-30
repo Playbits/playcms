@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-04-25T12:00:00Z",
+  "libraries": {
+    "swaggo-swag": {
+      "files": [
+        {
+          "filename": "annotation-reference.md",
+          "topic": "complete annotation reference with all swag annotations",
+          "tech_stack": "Go + Gin",
+          "fetched": "2026-04-25T12:00:00Z",
+          "source": "Context7 API + Official GitHub README"
+        },
+        {
+          "filename": "security-and-params.md",
+          "topic": "security definitions, @Security syntax, @Param syntax, optional auth patterns",
+          "tech_stack": "Go + Gin",
+          "fetched": "2026-04-25T12:00:00Z",
+          "source": "Context7 API + Official GitHub README"
+        }
+      ]
+    }
+  }
+}
